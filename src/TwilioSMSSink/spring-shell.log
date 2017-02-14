@@ -1,0 +1,4 @@
+// null 1.2.0.RELEASE log opened at 2017-02-13 16:32:26
+app import --uri http://bit.ly/Addison-GA-task-applications-maven
+app register --name "sms" --type sink --uri "https://storage.googleapis.com/stream-apps-crdant-io/TwilioSMSSink-0.0.1-SNAPSHOT.jar"
+// [failed] stream create --name "alert" --definition "endpoint: http | send-sms: sms"

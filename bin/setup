@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# create an org for the workshop
+cf create-org workshop
+cf target -o workshop
+
+user_and_space () {
+  user=$1
+  pass=$2
+
+  cf create-user $user $pass
+  cf create-space $user -o workshop
+  cf set-space-role $user workshop $user SpaceManager
+  cf set-space-role $user workshop $user SpaceDeveloper
+}
+
+# create users with spaces
+user_and_space unum altimetrical-nonnervous-verb
+user_and_space meji contravener-nucleator-unlanded
+user_and_space saddex phosphagen-hydrofoil-decolorization
+user_and_space opat dippy-dissolute-prevacation
+user_and_space besh composite-sena-storax

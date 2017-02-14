@@ -1,0 +1,8 @@
+---
+applications:
+- name: kafka-producer
+  memory: 1024M
+  path: build/libs/KafkaProducer-0.0.1-SNAPSHOT.jar
+  host: kafka-producer
+  services:
+  - kafka

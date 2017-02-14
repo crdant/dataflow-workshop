@@ -1,0 +1,8 @@
+---
+applications:
+- name: kafka-consumer
+  memory: 1024M
+  path: build/libs/KafkaConsumer-0.0.1-SNAPSHOT.jar
+  host: kafka-consumer
+  services:
+  - kafka

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+BASEDIR=`dirname $0`/..
+
+pushd $BASEDIR/src/TwilioSMSSink
+./gradlew clean assemble
+gsutil cp build/libs/TwilioSMSSink-0.0.1-SNAPSHOT.jar gs://stream-apps-crdant-io/
+gsutil acl ch -u AllUsers:R gs://stream-apps-crdant-io/TwilioSMSSink-0.0.1-SNAPSHOT.jar
+gsutil setmeta -h "Cache-control: private, max-age=0, no-transform" gs://stream-apps-crdant-io/TwilioSMSSink-0.0.1-SNAPSHOT.jar
+popd
+
+scdf --spring.shell.commandFile=$BASEDIR/etc/streams.txt

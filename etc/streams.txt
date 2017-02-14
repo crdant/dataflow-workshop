@@ -1,0 +1,7 @@
+app import --uri http://bit.ly/Addison-GA-task-applications-maven
+app import --uri http://bit.ly/Avogadro-SR1-stream-applications-rabbit-maven
+app register --name "sms" --type sink --uri "https://storage.googleapis.com/stream-apps-crdant-io/TwilioSMSSink-0.0.1-SNAPSHOT.jar"
+stream create --name "alert" --definition "endpoint: http | send-sms: sms"
+stream create --name "log" --definition ":alert.endpoint > logger: log"
+stream deploy alert
+stream deploy log

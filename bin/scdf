@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+BASEDIR=`dirname $0`/..
+SCDF_DIR=/Users/crdant/workspace/spring/spring-cloud-dataflow
+
+DATAFLOW_URI=https://dataflow-97c3d895-fa89-4b35-9f83-32d05a31675a.apps.gcp.crdant.io
+DATAFLOW_USERNAME=system_services
+DATAFLOW_PASSWORD=Kll2VEE3sEjRMClNdnNn-mtVTPQfTTwO
+
+TRUSTSTORE_PASSWORD=dataflow
+
+java -Djavax.net.ssl.trustStorePassword=$TRUSTSTORE_PASSWORD -Djavax.net.ssl.trustStore=$BASEDIR/etc/dataflow.truststore -Djavax.net.ssl.trustStoreType=jks \
+       -jar $SCDF_DIR/spring-cloud-dataflow-shell-1.1.2.RELEASE.jar --dataflow.uri=$DATAFLOW_URI --dataflow.username=$DATAFLOW_USERNAME --dataflow.password=$DATAFLOW_PASSWORD $@
