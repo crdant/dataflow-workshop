@@ -1,2 +1,6 @@
 .gradle
 build
+spring-shell.log
+log/*
+.idea
+.gradletasknamecache
