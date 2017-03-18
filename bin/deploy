@@ -8,4 +8,11 @@ gsutil acl ch -u AllUsers:R gs://stream-apps-crdant-io/TwilioSMSSink-0.0.1-SNAPS
 gsutil setmeta -h "Cache-control: private, max-age=0, no-transform" gs://stream-apps-crdant-io/TwilioSMSSink-0.0.1-SNAPSHOT.jar
 popd
 
+pushd $BASEDIR/src/SlackSink
+./gradlew clean assemble
+gsutil cp build/libs/SlackSink-0.0.1-SNAPSHOT.jar gs://stream-apps-crdant-io/
+gsutil acl ch -u AllUsers:R gs://stream-apps-crdant-io/SlackSink-0.0.1-SNAPSHOT.jar
+gsutil setmeta -h "Cache-control: private, max-age=0, no-transform" gs://stream-apps-crdant-io/SlackSink-0.0.1-SNAPSHOT.jar
+popd
+
 scdf --spring.shell.commandFile=$BASEDIR/etc/streams.txt
