@@ -1,0 +1,34 @@
+{
+  "groups": [{
+    "name": "sms",
+    "type": "io.pivotal.pa.demo.TwilioSMSSinkProperties",
+    "sourceType": "io.pivotal.pa.demo.TwilioSMSSinkkProperties"
+  }],
+  "properties": [
+    {
+      "name": "sms.from",
+      "type": "java.lang.String",
+      "description": "The phone number to send the SMS from",
+      "sourceType": "io.pivotal.pa.demo.SlackSinkProperties",
+    },
+    {
+      "name": "sms.to",
+      "type": "java.lang.String",
+      "description": "The phone number to send the SMS to",
+      "sourceType": "io.pivotal.pa.demo.TwilioSMSSinkProperties"
+    },
+    {
+      "name": "sms.sid",
+      "type": "java.lang.String",
+      "description": "The SID for the Twilio account that will be used to send the message",
+      "sourceType": "io.pivotal.pa.demo.TwilioSMSSinkProperties"
+    },
+    {
+      "name": "sms.token",
+      "type": "java.lang.String",
+      "description": "The authentication token for the Twilio account that will be used to send the message",
+      "sourceType": "io.pivotal.pa.demo.TwilioSMSSinkProperties"
+    }
+  ],
+  "hints": []
+}

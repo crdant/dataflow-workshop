@@ -1,0 +1,22 @@
+{
+  "groups": [{
+    "name": "slack",
+    "type": "io.pivotal.pa.demo.SlackSinkProperties",
+    "sourceType": "io.pivotal.pa.demo.SlackSinkProperties"
+  }],
+  "properties": [
+    {
+      "name": "slack.channel",
+      "type": "java.lang.String",
+      "description": "The slack channel to communicate on",
+      "sourceType": "io.pivotal.pa.demo.SlackSinkProperties",
+    },
+    {
+      "name": "slack.token",
+      "type": "java.lang.String",
+      "description": "The authentication token to use when connecting to the Slack API",
+      "sourceType": "io.pivotal.pa.demo.SlackSinkProperties"
+    }
+  ],
+  "hints": []
+}
