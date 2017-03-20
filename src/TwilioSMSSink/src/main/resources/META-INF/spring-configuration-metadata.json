@@ -9,7 +9,7 @@
       "name": "sms.from",
       "type": "java.lang.String",
       "description": "The phone number to send the SMS from",
-      "sourceType": "io.pivotal.pa.demo.SlackSinkProperties",
+      "sourceType": "io.pivotal.pa.demo.TwilioSMSSinkProperties"
     },
     {
       "name": "sms.to",
