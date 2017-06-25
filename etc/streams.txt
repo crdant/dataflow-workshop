@@ -2,9 +2,9 @@ app import --uri http://bit.ly/Addison-GA-task-applications-maven
 app import --uri http://bit.ly/Avogadro-SR1-stream-applications-rabbit-maven
 app register --name "sms" --type sink --uri "https://storage.googleapis.com/stream-apps-crdant-io/TwilioSMSSink-0.0.1-SNAPSHOT.jar"
 app register --name "slack" --type sink --uri "https://storage.googleapis.com/stream-apps-crdant-io/SlackSink-0.0.1-SNAPSHOT.jar"
-stream create --name "alert" --definition "endpoint: http | transform --expression=#jsonPath(payload,'.message') | sms"
+stream create --name "alert" --definition "endpoint: http | transform --expression=#jsonPath(payload,'.message') | sms --from='+17813325378' --to='+16173881120' --sid='AC2885990a4d14c131e676ce04844b24d1' --token='f7d965886aa0ad41513e7483649ee992'"
 stream create --name "log" --definition ":alert.transform > log"
-stream create --name "slack" --definition ":alert.transform > slack"
+stream create --name "slack" --definition ":alert.transform > slack --channel='boston-scientific' --token='xoxb-156181098692-v6rKFQPJH4NvOIg2ZHBAMbAo'"
 stream deploy alert
 stream deploy log
 stream deploy slack
